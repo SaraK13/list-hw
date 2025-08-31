@@ -13,13 +13,17 @@ type Props = {
   onPress?: () => void;
 };
 
+function formatDate(dateString: string) {
+  return new Date(dateString).toLocaleDateString('de-DE'); 
+}
+
 export default function UserCard({ user, onPress }: Props) {
   return (
     <TouchableOpacity onPress={onPress} style={styles.card}>
       <Text style={styles.name}>{user.name}</Text>
       <Text>ID: {user.id}</Text>
       <Text>Status: {user.status}</Text>
-      <Text>Created: {user.createdAt}</Text>
+      <Text>Created: {formatDate(user.createdAt)}</Text>
     </TouchableOpacity>
   );
 }
