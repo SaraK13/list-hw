@@ -13,7 +13,7 @@ export default function HomeScreen() {
       renderItem={({ item }) => (
         <UserCard
           user={item}
-          onPress={() => router.push({ pathname: `/${item.id}`, params: item })}
+          onPress={() => router.push({ pathname: '/[id]', params: item })}
         />
       )}
     />
