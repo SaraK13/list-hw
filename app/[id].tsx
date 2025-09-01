@@ -1,13 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Stack, useLocalSearchParams } from 'expo-router';
-
-type User = {
-  id: string;
-  name: string;
-  status: 'active' | 'inactive' | string;
-  createdAt: string;
-};
+import type { User } from '../types/user';
 
 export default function UserDetailScreen() {
   const params = useLocalSearchParams<{ id: string; name?: string; status?: string; createdAt?: string }>();

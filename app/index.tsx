@@ -1,5 +1,6 @@
 import { FlatList, View, TextInput, StyleSheet } from 'react-native';
 import { users as mockUsers } from '../data/users';
+import type { User } from '../types/user';
 import UserCard from '../components/userCard';
 import { useRouter } from 'expo-router';
 import { useState, useEffect } from 'react';
@@ -7,9 +8,9 @@ import { sortUsers, type SortKey, type SortOrder } from '../utils/userUtils';
 import SortButton from '../components/sortButton';
 
 export default function HomeScreen() {
-  const [users, setUsers] = useState(mockUsers);
+  const [users, setUsers] = useState<User[]>(mockUsers);
   const [query, setQuery] = useState('');
-  const [filteredUsers, setFilteredUsers] = useState(mockUsers);
+  const [filteredUsers, setFilteredUsers] = useState<User[]>(mockUsers);
   const [sortKey, setSortKey] = useState<SortKey>('none');
   const [sortOrder, setSortOrder] = useState<SortOrder>('desc');
 

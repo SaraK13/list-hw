@@ -1,12 +1,6 @@
 import React from 'react';
 import { Text, StyleSheet, TouchableOpacity, View } from 'react-native';
-
-type User = {
-  id: string;
-  name: string;
-  status: string;
-  createdAt: string;
-};
+import type { User } from '../types/user';
 
 type Props = {
   user: User;
